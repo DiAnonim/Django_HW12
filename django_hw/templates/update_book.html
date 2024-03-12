@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
+{% block header %}
+<h1>Update Book</h1>
+{% endblock %}
+
 {% block content %}
-    <h1>Update Book</h1>
     <form method="POST">
         {% csrf_token %}
         {{form}}

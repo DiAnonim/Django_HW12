@@ -1,7 +1,23 @@
 {% extends "base.html" %}
 
+{% block header %}
+<h1>Home</h1>
+{% endblock %}
+
 {% block content %}
+<div class="home">
     {% for book in books %}
-        <a href="{% url 'detail_book' book.id %}"><h1>{{book.title}}</h1></a>
+    <div class="{% cycle 'lightTheme' 'darkTheme' %}">
+        <a href="{% url 'detail_book' book.id %}">
+            <h2>{{book.title}}</h2>
+        </a>
+    </div>
     {% endfor %}
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <h3>This is Footer in Home</h3>
+</footer>
 {% endblock %}

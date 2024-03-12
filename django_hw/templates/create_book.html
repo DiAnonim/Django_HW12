@@ -1,10 +1,19 @@
 {% extends "base.html" %}
 
+{% block header %}
+<h1>Create Book</h1>
+{% endblock %}
+
 {% block content %}
-    <h1>Create Book</h1>
     <form method="POST">
         {% csrf_token %}
         {{form}}
         <input type="submit" value="Create">
     </form>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <h3>This is Footer in Create Book</h3>
+</footer>
 {% endblock %}

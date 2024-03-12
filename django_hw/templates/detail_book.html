@@ -1,13 +1,25 @@
 {% extends "base.html" %}
 
+{% block header %}
+<h1>Detail Book</h1>
+{% endblock %}
+
 {% block content %}
+<div>
     <h1>{{book.title}}</h1>
     <p>{{book.author}}</p>
     <p>{{book.price}}</p>
     <p>{{book.publisher}}</p>
     <p>{{book.description}}</p>
-    <p>{{book.date}}</p>
+    <p>{{book.date|date:'d.m.Y H:i:s'}}</p>
 
     <a href="{% url 'update_book' book.id %}">Update Book</a>
     <a href="{% url 'delete_book' book.id %}">Delete Book</a>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <h3>This is Footer in Detail Book</h3>
+</footer>
 {% endblock %}

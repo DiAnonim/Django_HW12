@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block header %}
 <h1>Delete Book</h1>
+{% endblock %}
+
+{% block content %}
 <form method="post">
     {% csrf_token %}
     <p>delete a book"{{book.title}}"?</p>
