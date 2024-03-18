@@ -5,6 +5,7 @@ from app.forms import BookForm
 from django.http import HttpResponse, JsonResponse
 from django.views.generic  import ListView, CreateView, UpdateView, DeleteView, DetailView
 
+
 def home(request):
     books = Book.objects.all()
     return render(request, "home.html", {"books": books})
@@ -23,6 +24,7 @@ class BookList(ListView):
     model = Book
     template_name = "home.html"
     context_object_name = "books"
+    paginate_by = 3
 
 
 class BookDetail(DetailView):
