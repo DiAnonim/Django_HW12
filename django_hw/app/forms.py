@@ -10,7 +10,8 @@ class BookForm(forms.ModelForm):
         fields = '__all__'
         
 class SearchForm(forms.Form):
-    title = forms.CharField(max_length = 255)
-    captcha = CaptchaField(generator = 'captcha.helpers.math_challenge')
+    title = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder': 'Введите название книги'}))
+    captcha = CaptchaField(generator='captcha.helpers.math_challenge')
+
 
     
