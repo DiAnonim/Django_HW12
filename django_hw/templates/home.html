@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block content %}
+<form action="{% url 'home' %}" method="get">
+    {% csrf_token %}
+    {{ search_form.as_p }}
+    <button type="submit">Search</button>
+</form>
 <div class="home">
     {% for book in books %}
     <div class="{% cycle 'lightTheme' 'darkTheme' %}">
